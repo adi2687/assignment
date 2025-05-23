@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .subdiv {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rectangle {
+            width: 200px;
+            height: 130px;
+            background-color: rgba(10, 110, 116, 0.3);
+            color: #01383b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-right: 0%;
+            flex-direction: row;
+            gap: 100px;
+        }
+
+        .number {
+            font-size: 260px;
+            font-weight: 900;
+            color: #0a6e74;
+            font-family: "Google Sans", Roboto, arial, sans-serif;
+            opacity: 1;
+            z-index: 2;
+            text-shadow: 8px 8px 12px rgba(255, 255, 255, 0.6);
+            padding: 10px;
+        }
+
+        .line {
+            width: 12px;
+            height: 2500px;
+            background-color: #0a6e74;
+            position: absolute;
+            left: 49.6%;
+            top:6%;
+            z-index: -1;
+        }
+
+        .linehorizontal {
+            width: 100px;
+            height: 12px;
+            background-color: #0a6e74;
+            position: absolute;
+            top: 45%;
+            margin-left: 150%;
+            z-index: 1;
+        }
+
+        .second .rectangle {
+            margin-left: 0;
+            margin-right: 11%;
+        }
+
+        .second .square {
+            right: 50%;
+            left: auto;
+            transform: translateX(45px);
+        }
+
+        .square {
+            width: 90px;
+            height: 90px;
+            background-color: #0a6e74;
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .innersquare {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            margin-left: 100px;
+            padding-left: 170px;
+            text-align: center;
+        }
+
+        .second .content {
+            margin-left: 0;
+            padding-left: 0;
+            padding-right: 170px;
+            margin-right: 100px;
+        }
+
+        .rectangle {
+            margin-left: 11%
+        }
+
+        .content .title {
+            color: #0a6e74;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .content .description {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 19px;
+            font-weight: 600;
+            color: grey
+        }
+        h1 {
+      text-align: center;
+      color: #0a6e74;
+      font-size: 46px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      line-height: 1.4;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .linehorizontal.even {
+        margin-left: 0;
+        right: auto;
+        left: -100px;
+        width: 100px;
+        position: absolute;
+    }
+    
+    .download-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+    
+    .download-btn {
+        background-color: #0a6e74;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        transition: background-color 0.3s;
+    }
+    
+    .download-btn:hover {
+        background-color: #085459;
+    }
+    
+    .bottom-button-container {
+        margin: 50px 0;
+        text-align: center;
+    }
+    
+    .bottom-button-container .download-btn {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+    </style>
+</head>
+
+<body>
+    
+    
+    <div class="container">
+        <h1>Harnessing Infographics for Effective Pinterest Marketing</h1>
+        <div class="line"></div>
+        <div class="subdiv first">
+            <!-- <div class="first"> -->
+                <div class="rectangle">
+                    <div class="number">
+                        1
+                    </div>
+                    <div class="linehorizontal"></div>
+                </div>
+                <div class="square">
+                    <div class="innersquare"></div>
+                </div>
+            <!-- </div> -->
+            <div class="content">
+                <h2 class="title">Enhancing Visual Appeal</h2>
+                <p class="description">Infographics leverage visually appealing designs, which can capture users'
+                    attention quickly on Pinterest's image-centric platform. This visual aspect can lead to increased
+                    engagement and higher pin rates.</p>
+            </div>
+        </div>
+
+
+        <div class="subdiv second">
+            <div class="content">
+                <h2 class="title">Simplifying Complex Information</h2>
+                <p class="description">Infographics simplify complex data and concepts into digestible visual formats. This is particularly useful for e-commerce brands or service providers looking to explain products or services quickly.</p>
+            </div>
+            <div class="square">
+                <div class="innersquare"></div>
+            </div>
+            <div class="rectangle">
+                <div class="number">
+                    2
+                </div>
+                <div class="linehorizontal even"></div>
+            </div>
+        </div>
+
+        <div class="subdiv first">
+            <div class="rectangle">
+                <div class="number">
+                    3
+                </div>
+                <div class="linehorizontal"></div>
+            </div>
+            <div class="square">
+                <div class="innersquare"></div>
+            </div>
+            <div class="content">
+                <h2 class="title">Boosting Brand Awareness</h2>
+                <p class="description">Consistent use of infographics helps in building brand identity. By using specific colors, fonts, and styles, brands can create a distinct visual language that resonates with users and enhances recall.</p>
+            </div>
+        </div>
+
+        <div class="subdiv second">
+            <div class="content">
+                <h2 class="title">Encouraging Shares and Saves</h2>
+                <p class="description">Infographics are highly shareable content; they encourage users to save, pin, or share them due to their informative nature. This can lead to organic reach and visibility on Pinterest.</p>
+            </div>
+            <div class="square">
+                <div class="innersquare"></div>
+            </div>
+            <div class="rectangle">
+                <div class="number">
+                    4
+                </div>
+                <div class="linehorizontal even"></div>
+            </div>
+        </div>
+
+        <div class="subdiv first">
+            <div class="rectangle">
+                <div class="number">
+                    5
+                </div>
+                <div class="linehorizontal"></div>
+            </div>
+            <div class="square">
+                <div class="innersquare"></div>
+            </div>
+            <div class="content">
+                <h2 class="title">Driving Traffic to Websites</h2>
+                <p class="description">Infographics can include call-to-actions (CTAs) linked back to your website or landing page, resulting in a conversion of Pinterest users into website visitors, thus driving traffic effectively.</p>
+            </div>
+        </div>
+
+        <div class="subdiv second">
+            <div class="content">
+                <h2 class="title">Leveraging SEO Benefits</h2>
+                <p class="description">When properly tagged with keywords and descriptions, infographics can enhance SEO on Pinterest. This can improve discoverability, making it easier for users interested in specific topics to find your pins.</p>
+            </div>
+            <div class="square">
+                <div class="innersquare"></div>
+            </div>
+            <div class="rectangle">
+                <div class="number">
+                    6
+                </div>
+                <div class="linehorizontal even"></div>
+            </div>
+        </div>
+
+        <div class="subdiv first">
+            <div class="rectangle">
+                <div class="number">
+                    7
+                </div>
+                <div class="linehorizontal"></div>
+            </div>
+            <div class="square">
+                <div class="innersquare"></div>
+            </div>
+            <div class="content">
+                <h2 class="title">Creating Educational Content</h2>
+                <p class="description">Infographics can serve as educational tools or tutorials by providing value to your audience. This type of informative content can establish authority in your niche and attract a loyal following.</p>
+            </div>
+        </div>
+        
+        <div class="bottom-button-container">
+            <button id="bottomScreenshotBtn" class="download-btn">Take Screenshot</button>
+        </div>
+    </div>
+    <script>
+        async function captureScreenshot(event) {
+            try {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Generating...';
+                button.disabled = true;
+                
+                // Get the screenshot from the server
+                console.log('Requesting screenshot from server...');
+                const response = await fetch('http://localhost:3001/api/screenshot', {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'image/png'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to generate screenshot');
+                }
+                
+                // Get the blob from the response
+                const blob = await response.blob();
+                
+                // Create a URL for the blob
+                const url = window.URL.createObjectURL(blob);
+                
+                // Create a temporary link and trigger download
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'pinterest-infographic.png';
+                document.body.appendChild(a);
+                a.click();
+                
+                // Clean up
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                // Reset button
+                button.textContent = originalText;
+                button.disabled = false;
+            } catch (error) {
+                console.error('Error downloading screenshot:', error);
+                alert('Failed to generate screenshot. Please try again.');
+                
+                // Reset button
+                const button = event.target;
+                button.textContent = button.id === 'downloadBtn' ? 'Take a screenshot' : 'Take Screenshot';
+                button.disabled = false;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const bottomButton = document.getElementById('bottomScreenshotBtn');
+            if (bottomButton) {
+                bottomButton.addEventListener('click', captureScreenshot);
+            }
+        });
+    </script>
+</body>
+
+</html>
