@@ -318,9 +318,8 @@
                 button.textContent = 'Generating...';
                 button.disabled = true;
                 
-                // Get the screenshot from the server
                 console.log('Requesting screenshot from server...');
-                const response = await fetch('http://localhost:3001/api/screenshot', {
+                const response = await fetch('https://assignment-zeta-fawn.vercel.app/api/screenshot', {
                     method: 'GET',
                     headers: {
                         'Accept': 'image/png'
@@ -331,13 +330,10 @@
                     throw new Error('Failed to generate screenshot');
                 }
                 
-                // Get the blob from the response
                 const blob = await response.blob();
                 
-                // Create a URL for the blob
                 const url = window.URL.createObjectURL(blob);
                 
-                // Create a temporary link and trigger download
                 const a = document.createElement('a');
                 a.style.display = 'none';
                 a.href = url;
@@ -345,18 +341,15 @@
                 document.body.appendChild(a);
                 a.click();
                 
-                // Clean up
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
                 
-                // Reset button
                 button.textContent = originalText;
                 button.disabled = false;
             } catch (error) {
                 console.error('Error downloading screenshot:', error);
                 alert('Failed to generate screenshot. Please try again.');
                 
-                // Reset button
                 const button = event.target;
                 button.textContent = button.id === 'downloadBtn' ? 'Take a screenshot' : 'Take Screenshot';
                 button.disabled = false;
