@@ -310,6 +310,8 @@
             <button id="bottomScreenshotBtn" class="download-btn">Take Screenshot</button>
         </div>
     </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
     <script>
         async function captureScreenshot(event) {
             try {
@@ -318,39 +320,42 @@
                 button.textContent = 'Generating...';
                 button.disabled = true;
                 
-                console.log('Requesting screenshot from server...');
-                const response = await fetch('https://assignment-zeta-fawn.vercel.app/api/screenshot', {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'image/png'
-                    }
+                button.style.visibility = 'hidden';
+                
+                console.log('Generating screenshot...');
+                
+                const container = document.querySelector('.container');
+                
+                const canvas = await html2canvas(container, {
+                    scale: 2, 
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: '#ffffff'
                 });
                 
-                if (!response.ok) {
-                    throw new Error('Failed to generate screenshot');
-                }
+                canvas.toBlob(function(blob) {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = 'pinterest-infographic.png';
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                    
+                    button.style.visibility = 'visible';
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }, 'image/png');
                 
-                const blob = await response.blob();
-                
-                const url = window.URL.createObjectURL(blob);
-                
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = 'pinterest-infographic.png';
-                document.body.appendChild(a);
-                a.click();
-                
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-                
-                button.textContent = originalText;
-                button.disabled = false;
             } catch (error) {
-                console.error('Error downloading screenshot:', error);
+                console.error('Error generating screenshot:', error);
                 alert('Failed to generate screenshot. Please try again.');
                 
                 const button = event.target;
+                button.style.visibility = 'visible';
                 button.textContent = button.id === 'downloadBtn' ? 'Take a screenshot' : 'Take Screenshot';
                 button.disabled = false;
             }
